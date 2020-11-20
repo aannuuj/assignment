@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BottomView: View {
     @State public var Tapped = false
-   
+    
     var body: some View {
         NavigationView{
             VStack(alignment: .center, spacing: 30){

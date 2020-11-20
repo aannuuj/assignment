@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct SwiftUIView: View {
-    
+    // static data
     let name = "Hariom"
     let itemHeight:CGFloat = 500
     let imageHeight:CGFloat = 400
     let SVWidth = UIScreen.main.bounds.width - 40
     
+    //  state vars
     @State private var showBottomSheet = false
     @State var expandedItem = Item(name: "", description: "", subtitle: "", image: "", logo: "")
     @State var expandedScreen_startPoint = CGRect(x: 0, y: 0, width: 100, height: 100)
@@ -26,6 +27,7 @@ struct SwiftUIView: View {
         ZStack{
             Color.white.edgesIgnoringSafeArea(.all)
             ScrollView{
+                // top view
                 HStack{
                     VStack(alignment: .leading){
                         Text("Welocme back \(name)!")
@@ -36,7 +38,7 @@ struct SwiftUIView: View {
                     Spacer()
                 }
                 .padding(.init([.leading, .top , .trailing]))
-                
+                // rendering of cards
                 ForEach(items, id: \.id){thisItem in
                     GeometryReader{geo -> AnyView in
                         return AnyView(
@@ -48,53 +50,54 @@ struct SwiftUIView: View {
                                     .frame(width:self.SVWidth, height: self.itemHeight)
                                     .clipped()
                                     .background(Color.white)
-                                    VStack(alignment: .leading){
-                                        HStack{
-                                            VStack(alignment: .leading)
-                                            {
-                                                HStack(alignment: .top){
-                                                    ZStack{
+                                VStack(alignment: .leading){
+                                    HStack{
+                                        VStack(alignment: .leading)
+                                        {
+                                            HStack(alignment: .top){
+                                                ZStack{
                                                     RoundedRectangle(cornerRadius: 25, style: .continuous)
                                                         .fill(Color.black)
                                                         .frame(width: 130, height: 130)
                                                         .shadow(color: .init(red: 0.1, green: 0.1, blue: 0.1) , radius: 11 , x: 0, y: 4)
-                                                        Image(thisItem.logo)
-                                                            .resizable()
-                                                            .frame(width: 80, height: 80)
-                                                            .padding(5)
-                                                    }.opacity(0.9)
-                                                    Spacer()
-                                                }
-                                                
-                                            }.padding()
-                                            Spacer()
-                                        }
+                                                    Image(thisItem.logo)
+                                                        .resizable()
+                                                        .frame(width: 80, height: 80)
+                                                        .padding(5)
+                                                }.opacity(0.9)
+                                                Spacer()
+                                            }
+                                            
+                                        }.padding()
                                         Spacer()
-                                        Text("\(thisItem.subtitle)")
-                                            .font(.system(size: 48, weight: .bold, design: .default))
-                                            .foregroundColor(.init(white: 0.9)).opacity(0.9)
-                                            .padding(.init([.leading, .top , .bottom]))
-                                        Button(action: {
-                                            self.expandedItem = thisItem
-                                            let x = geo.frame(in: .global).minX
-                                            let y = geo.frame(in: .global).minY
-                                            let thisRect = CGRect(x: x,y: y,width:self.SVWidth,height: self.itemHeight)
-                                            self.expandedScreen_returnPoint = thisRect
-                                            self.expandedScreen_startPoint =  thisRect
-                                            Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { (timer) in
-                                                self.expandedScreen_shown = true
-                                                self.expandedScreen_startPoint =  CGRect(x: 0,y: 0,width:UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height) }
-                                        }){
-                                            Text("Check")
-                                        }.frame(width: 300, height: 55)
-                                        .background(Color(.white))
-                                        .foregroundColor(.black)
-                                        .cornerRadius(15)
-                                        .padding(.init([.leading, .bottom]))
-                                        .shadow(color: .init(red: 0.1, green: 0.1, blue: 0.1) , radius: 11 , x: 0, y: 4 )
                                     }
-                                    .frame(width: self.SVWidth)
-                                    
+                                    Spacer()
+                                    Text("\(thisItem.subtitle)")
+                                        .font(.system(size: 48, weight: .bold, design: .default))
+                                        .foregroundColor(.init(white: 0.9)).opacity(0.9)
+                                        .padding(.init([.leading, .top , .bottom]))
+                                    // call to action
+                                    Button(action: {
+                                        self.expandedItem = thisItem
+                                        let x = geo.frame(in: .global).minX
+                                        let y = geo.frame(in: .global).minY
+                                        let thisRect = CGRect(x: x,y: y,width:self.SVWidth,height: self.itemHeight)
+                                        self.expandedScreen_returnPoint = thisRect
+                                        self.expandedScreen_startPoint =  thisRect
+                                        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { (timer) in
+                                            self.expandedScreen_shown = true
+                                            self.expandedScreen_startPoint =  CGRect(x: 0,y: 0,width:UIScreen.main.bounds.size.width,height: UIScreen.main.bounds.size.height) }
+                                    }){
+                                        Text("Check")
+                                    }.frame(width: 300, height: 55)
+                                    .background(Color(.white))
+                                    .foregroundColor(.black)
+                                    .cornerRadius(15)
+                                    .padding(.init([.leading, .bottom]))
+                                    .shadow(color: .init(red: 0.1, green: 0.1, blue: 0.1) , radius: 11 , x: 0, y: 4 )
+                                }
+                                .frame(width: self.SVWidth)
+                                
                             }
                             .cornerRadius(15).foregroundColor(.white)
                             .shadow(color: .init(red: 0.1, green: 0.1, blue: 0.1) , radius: 11 , x: 0, y: 4))
@@ -105,10 +108,12 @@ struct SwiftUIView: View {
                 
                 //ForEach_End
             }
+            // overlay view on tap
             GeometryReader{geo -> AnyView in
                 let thisItem = self.expandedItem
                 return AnyView(
                     ZStack{
+                        
                         Color.white.edgesIgnoringSafeArea(.all)
                         ScrollView{
                             VStack(){
@@ -119,16 +124,16 @@ struct SwiftUIView: View {
                                         VStack(alignment: .leading, spacing: 20){
                                             HStack(alignment: .center){
                                                 ZStack{
-                                                RoundedRectangle(cornerRadius: 25, style: .continuous)
-                                                    .fill(Color.black)
-                                                    .frame(width: 130, height: 130)
-                                                    .shadow(color: .init(red: 0.1, green: 0.1, blue: 0.1) , radius: 11 , x: 0, y: 4)
+                                                    RoundedRectangle(cornerRadius: 25, style: .continuous)
+                                                        .fill(Color.black)
+                                                        .frame(width: 130, height: 130)
+                                                        .shadow(color: .init(red: 0.1, green: 0.1, blue: 0.1) , radius: 11 , x: 0, y: 4)
                                                     Image(thisItem.logo)
                                                         .resizable()
                                                         .frame(width: 120, height: 120)
                                                         .padding(25)
                                                 }
-
+                                                
                                                 HStack(alignment: .center, spacing: 10){
                                                     Text(thisItem.subtitle)
                                                         .font(.title)
@@ -146,8 +151,8 @@ struct SwiftUIView: View {
                                                 .fontWeight(.semibold)
                                         }).accentColor(.green)
                                         .sheet(isPresented: $showingDetail) {
-//                                            ReadMore(desc: thisItem.description)
-                                                }
+                                            //                                            ReadMore(desc: thisItem.description)
+                                        }
                                         ScrollView(.horizontal, showsIndicators: false) {
                                             HStack{
                                                 ForEach(0 ..< 5) {_ in
@@ -159,7 +164,7 @@ struct SwiftUIView: View {
                                         }.padding(.leading)
                                         Button(action: { withAnimation {
                                             self.showBottomSheet.toggle()
-                                          }}) {
+                                        }}) {
                                             Text("DOWNLOAD\n30MB")
                                                 .bold()
                                                 .multilineTextAlignment(.center)
@@ -204,8 +209,9 @@ struct SwiftUIView: View {
                 Animation.easeIn(duration: 0.02)
                     .delay(self.expandedScreen_willHide ? 0.2 : 0)
             )
+            // bottom sheet triggers
             BottomSheetModal(display: $showBottomSheet) {
-             Bottom2()
+                Bottom2()
             }
         }
     }
