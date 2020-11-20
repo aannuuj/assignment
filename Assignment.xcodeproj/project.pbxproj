@@ -13,6 +13,14 @@
 		BEA290D02565844400CE0756 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA290CF2565844400CE0756 /* Assets.xcassets */; };
 		BEA290D32565844400CE0756 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA290D22565844400CE0756 /* Preview Assets.xcassets */; };
 		BEA290D62565844400CE0756 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA290D42565844400CE0756 /* LaunchScreen.storyboard */; };
+		BEA290E425659DE000CE0756 /* BottomSheetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA290E325659DE000CE0756 /* BottomSheetModel.swift */; };
+		BEA290E725659E1900CE0756 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA290E625659E1900CE0756 /* ViewExt.swift */; };
+		BEA290ED2565A44200CE0756 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA290EC2565A44200CE0756 /* Model.swift */; };
+		BEA290F02565A4E000CE0756 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA290EF2565A4E000CE0756 /* SwiftUIView.swift */; };
+		BEA290F82565BBD000CE0756 /* ReadMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA290F72565BBD000CE0756 /* ReadMore.swift */; };
+		BEA290FB2565C59800CE0756 /* BottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA290FA2565C59800CE0756 /* BottomView.swift */; };
+		BEC252C92566FF16008657B1 /* Bottom2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC252C82566FF16008657B1 /* Bottom2.swift */; };
+		BEC252CE256705F6008657B1 /* Buttom3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC252CD256705F6008657B1 /* Buttom3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		BEA290D22565844400CE0756 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BEA290D52565844400CE0756 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEA290D72565844400CE0756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEA290E325659DE000CE0756 /* BottomSheetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetModel.swift; sourceTree = "<group>"; };
+		BEA290E625659E1900CE0756 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
+		BEA290EC2565A44200CE0756 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		BEA290EF2565A4E000CE0756 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		BEA290F72565BBD000CE0756 /* ReadMore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMore.swift; sourceTree = "<group>"; };
+		BEA290FA2565C59800CE0756 /* BottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomView.swift; sourceTree = "<group>"; };
+		BEC252C82566FF16008657B1 /* Bottom2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bottom2.swift; sourceTree = "<group>"; };
+		BEC252CD256705F6008657B1 /* Buttom3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttom3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +75,14 @@
 				BEA290C92565844000CE0756 /* AppDelegate.swift */,
 				BEA290CB2565844000CE0756 /* SceneDelegate.swift */,
 				BEA290CD2565844000CE0756 /* ContentView.swift */,
+				BEA290EF2565A4E000CE0756 /* SwiftUIView.swift */,
+				BEA290FA2565C59800CE0756 /* BottomView.swift */,
+				BEC252C82566FF16008657B1 /* Bottom2.swift */,
+				BEC252CD256705F6008657B1 /* Buttom3.swift */,
+				BEA290F72565BBD000CE0756 /* ReadMore.swift */,
+				BEA290EC2565A44200CE0756 /* Model.swift */,
+				BEA290E325659DE000CE0756 /* BottomSheetModel.swift */,
+				BEA290E625659E1900CE0756 /* ViewExt.swift */,
 				BEA290CF2565844400CE0756 /* Assets.xcassets */,
 				BEA290D42565844400CE0756 /* LaunchScreen.storyboard */,
 				BEA290D72565844400CE0756 /* Info.plist */,
@@ -145,8 +169,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEA290FB2565C59800CE0756 /* BottomView.swift in Sources */,
+				BEA290F82565BBD000CE0756 /* ReadMore.swift in Sources */,
+				BEA290ED2565A44200CE0756 /* Model.swift in Sources */,
 				BEA290CA2565844000CE0756 /* AppDelegate.swift in Sources */,
+				BEA290F02565A4E000CE0756 /* SwiftUIView.swift in Sources */,
+				BEC252CE256705F6008657B1 /* Buttom3.swift in Sources */,
+				BEA290E425659DE000CE0756 /* BottomSheetModel.swift in Sources */,
 				BEA290CC2565844000CE0756 /* SceneDelegate.swift in Sources */,
+				BEC252C92566FF16008657B1 /* Bottom2.swift in Sources */,
+				BEA290E725659E1900CE0756 /* ViewExt.swift in Sources */,
 				BEA290CE2565844000CE0756 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,7 +327,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hariom.personal.Alarmofire.Assignment;
+				PRODUCT_BUNDLE_IDENTIFIER = hariom.personal.Assignment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -316,7 +348,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = hariom.personal.Alarmofire.Assignment;
+				PRODUCT_BUNDLE_IDENTIFIER = hariom.personal.Assignment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
